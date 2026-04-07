@@ -1,72 +1,76 @@
-# 🎓 TCC Mentor — Sistema Multiagente para Construção de TCC
+# 🎓 TCC Mentor
 
-Bem-vindo ao **TCC Mentor**, um sistema de Inteligência Artificial baseado em múltiplos agentes que simula uma **banca acadêmica** para ajudar você a desenvolver seu Trabalho de Conclusão de Curso (TCC).
+![Node.js](https://img.shields.io/badge/node-%3E%3D18-green)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Status](https://img.shields.io/badge/status-educational-orange)
+![AI](https://img.shields.io/badge/AI-multi--agent-purple)
 
-🔗 Repositório oficial:
+Sistema multiagente para apoio à construção de Trabalhos de Conclusão de Curso (TCC), utilizando LLMs via Groq.
+
+🔗 **Repositório:**
 https://github.com/sfelixgraciano/tcc-mentor
 
 ---
 
-## 🧠 O que é este projeto?
+## 🧠 Overview
 
-O **TCC Mentor** utiliza IA para simular diferentes especialistas que ajudam você a:
+O **TCC Mentor** é um sistema baseado em múltiplos agentes de IA que simula uma banca acadêmica para auxiliar estudantes na construção de seus TCCs.
 
-* estruturar seu TCC
-* melhorar sua escrita
-* desenvolver pensamento crítico
-* evoluir sua ideia ao longo do tempo
+O sistema promove:
 
-👉 Você não está falando com uma única IA — mas com uma **equipe de especialistas**.
-
----
-
-## 👥 Agentes do sistema
-
-Ao usar o sistema, você receberá respostas de diferentes agentes:
-
-### 👨‍🏫 Orientador
-
-Ajuda você a organizar ideias e sugere próximos passos.
-
-### 📚 Metodologista
-
-Define como sua pesquisa deve ser estruturada.
-
-### 🔍 Pesquisador
-
-Sugere conceitos relevantes e caminhos teóricos.
-
-### 📝 Revisor
-
-Melhora a escrita, clareza e linguagem acadêmica.
-
-### ⚖️ Avaliador (Banca)
-
-Critica seu trabalho e atribui uma nota com justificativa.
+* pensamento crítico
+* escrita acadêmica
+* aprendizado orientado
+* iteração contínua
 
 ---
 
-## 🎯 Objetivo do projeto
+## 🏗️ Arquitetura
 
-⚠️ IMPORTANTE:
+O sistema segue o padrão de **multiagente com orquestração central**:
 
-Este sistema **NÃO faz o TCC por você**.
+```text id="j0a9w1"
+Usuário → Orquestrador → Agentes Especializados
+                         ├── Orientador
+                         ├── Metodologista
+                         ├── Pesquisador
+                         ├── Revisor
+                         └── Avaliador
+```
 
-Ele foi criado para:
+Cada agente possui:
 
-* orientar
-* sugerir melhorias
-* apoiar seu aprendizado
-
-👉 O trabalho final deve ser **autoral**.
+* prompt especializado
+* função específica
+* responsabilidade bem definida
 
 ---
 
-## 🚀 Como executar o projeto
+## 👥 Agentes
+
+| Agente           | Responsabilidade                      |
+| ---------------- | ------------------------------------- |
+| 👨‍🏫 Orientador | Guia o aluno e estrutura o raciocínio |
+| 📚 Metodologista | Define abordagem científica           |
+| 🔍 Pesquisador   | Sugere base teórica                   |
+| 📝 Revisor       | Ajusta linguagem e clareza            |
+| ⚖️ Avaliador     | Realiza crítica e atribui nota        |
+
+---
+
+## ⚠️ Princípios do Sistema
+
+* ❌ Não gera TCC completo automaticamente
+* ✅ Foco em orientação e aprendizado
+* ⚠️ Pode conter imprecisões (use senso crítico)
+
+---
+
+## 🚀 Getting Started
 
 ### 1. Clone o repositório
 
-```bash
+```bash id="n3r9h2"
 git clone https://github.com/sfelixgraciano/tcc-mentor.git
 cd tcc-mentor
 ```
@@ -75,128 +79,122 @@ cd tcc-mentor
 
 ### 2. Instale as dependências
 
-```bash
+```bash id="bpmc2x"
 npm install
 ```
 
 ---
 
-### 3. Configure a API Key
+### 3. Configure variáveis de ambiente
 
-Crie um arquivo `.env` na raiz do projeto:
+Crie um arquivo `.env`:
 
-```env
-GROQ_API_KEY=sua_chave_aqui
+```env id="7u8d6g"
+GROQ_API_KEY=your_api_key_here
 ```
 
 ---
 
-### 4. Execute o sistema
+### 4. Execute o projeto
 
-```bash
+```bash id="cnbf47"
 node index.js
 ```
 
 ---
 
-## 💻 Como usar
+## 💻 Usage
 
-Após rodar o sistema, você poderá interagir digitando, por exemplo:
+Exemplos de entrada:
 
-```text
-Tema: Uso de Inteligência Artificial na educação
+```text id="d0a8d4"
+Tema: Inteligência Artificial aplicada à educação
 ```
 
-ou:
-
-```text
-Escrevi minha introdução, pode revisar?
+```text id="5z7bqk"
+Revise minha introdução:
+[cole seu texto aqui]
 ```
 
-O sistema irá responder com análises dos diferentes agentes.
+O sistema retornará respostas estruturadas por agente.
 
 ---
 
-## 🧪 Exemplos de uso
+## 🔄 Workflow Recomendado
 
-### 🟢 Definir tema
-
-```
-Quero fazer um TCC sobre IA no ensino médio
-```
-
----
-
-### 🟡 Refinar problema
-
-```
-Meu problema é: alunos têm dificuldade em aprender programação
-```
+1. Definir tema
+2. Refinar problema
+3. Estruturar metodologia
+4. Escrever seções
+5. Revisar e iterar
 
 ---
 
-### 🔵 Revisar texto
+## 📂 Estrutura do Projeto
 
-```
-Segue minha introdução: (cole seu texto aqui)
+```bash id="0qmnv7"
+.
+├── agents/
+├── core/
+├── config/
+├── index.js
+├── package.json
+└── .env
 ```
 
 ---
 
-### 🔴 Avaliação
+## 🧪 Exemplos de Uso
 
-```
-Avalie minha justificativa
-```
-
----
-
-## 🔄 Como evoluir seu TCC
-
-Use o sistema de forma iterativa:
-
-1. Escreva uma parte
-2. Receba feedback
-3. Melhore o conteúdo
-4. Execute novamente
-
-👉 Esse ciclo é essencial para um bom TCC.
+* Definição de tema
+* Revisão de texto
+* Avaliação de seção
+* Sugestão de metodologia
 
 ---
 
-## 🧠 Boas práticas
+## 🎓 Contexto Educacional
 
-* Seja claro e específico nas perguntas
-* Não peça para a IA fazer tudo por você
-* Compare as opiniões dos agentes
-* Revise sempre o conteúdo gerado
+Este projeto foi desenvolvido para ensino de:
 
----
-
-## ⚠️ Limitações
-
-* A IA pode cometer erros
-* Pode gerar respostas genéricas
-* Não substitui pesquisa acadêmica real
-
-👉 Use senso crítico sempre.
-
-## 🏁 Conclusão
-
-O objetivo deste projeto não é apenas usar IA.
-
-É aprender a:
-
-* pensar criticamente
-* estruturar ideias
-* construir conhecimento
+* Inteligência Artificial aplicada
+* Sistemas multiagentes
+* Engenharia de software
+* Escrita acadêmica
 
 ---
 
-## 👨‍💻 Sobre
+## 💡 Roadmap
 
-Projeto desenvolvido para a disciplina de Inteligência Artificial aplicada ao desenvolvimento de sistemas.
+* [ ] Interface web (React / Express)
+* [ ] Memória persistente
+* [ ] Sistema de pontuação por seção
+* [ ] Modo banca interativa
+* [ ] Integração com base de artigos (RAG)
 
 ---
 
-🚀 Bons estudos e bom desenvolvimento do seu TCC!
+## 🤝 Contribuição
+
+Contribuições são bem-vindas.
+
+Sugestões:
+
+* novos agentes
+* melhoria de prompts
+* novas features
+
+---
+
+## 📜 Licença
+
+MIT License
+
+---
+
+## ⚡ Observação Final
+
+Este projeto não substitui orientação acadêmica real.
+
+Use como ferramenta de apoio — não como solução final.
+
