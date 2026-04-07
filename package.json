@@ -1,0 +1,26 @@
+{
+  "name": "tcc-mentor",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao **TCC Mentor**, um sistema de Inteligência Artificial baseado em múltiplos agentes que simula uma **banca acadêmica** para ajudar você a desenvolver seu Trabalho de Conclusão de Curso (TCC).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfelixgraciano/tcc-mentor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/sfelixgraciano/tcc-mentor/issues"
+  },
+  "homepage": "https://github.com/sfelixgraciano/tcc-mentor#readme",
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "groq-sdk": "^1.1.2"
+  }
+}
